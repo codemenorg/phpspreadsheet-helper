@@ -499,7 +499,7 @@ class Helper
      * @param string $format
      * @return string Filepath
      */
-    public static function save($filename='excel', $format='Xlsx')
+    public static function save($filename='excel', $format='Xlsx', $delimiter = null, $enclosure = null)
     {
         $objPhpSpreadsheet = self::validExcelObj();
 
@@ -518,6 +518,16 @@ class Helper
             : "{$filename}{$extension}";
 
         // Save file
+        if( !is_null($delimiter) )
+        {
+            $objWriter->setDelimiter($delimiter);
+        }
+        
+        if( !is_null($enclosure) )
+        {
+            $objWriter->setEnclosure($enclosure);
+        }
+        
         $objWriter->save($filepath);
         return $filepath;
     }
