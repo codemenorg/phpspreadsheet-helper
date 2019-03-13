@@ -497,6 +497,8 @@ class Helper
      * 
      * @param string $filename Support file path
      * @param string $format
+     * @param string $delimiter
+     * @param string $enclosure
      * @return string Filepath
      */
     public static function save($filename='excel', $format='Xlsx', $delimiter = null, $enclosure = null)
