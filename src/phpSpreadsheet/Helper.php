@@ -529,7 +529,7 @@ class Helper
         {
             $objWriter->setEnclosure($enclosure);
         }
-        
+        $objWriter->setLineEnding("\r\n");
         $objWriter->save($filepath);
         return $filepath;
     }
